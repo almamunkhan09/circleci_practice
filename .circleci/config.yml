@@ -24,7 +24,7 @@ jobs:
       - checkout
       - run: 
           name: print-world
-          command: echo "Hello world my name is ${MY_NAME}" 
+          command: echo "Hello world my name is $MY_NAME" 
 
 workflows:
   # Name the workflow "welcome"
