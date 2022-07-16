@@ -13,6 +13,10 @@ jobs:
     steps:
       - checkout
       - run: 
+          name: make dir
+          command: mkdir data
+
+      - run: 
           name: save hello world
           command: echo "text to output here" > data/output.txt
       - persist_to_workspace:
