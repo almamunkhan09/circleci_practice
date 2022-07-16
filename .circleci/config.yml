@@ -9,13 +9,26 @@ defaults: &defaults
   docker: 
     - image: circleci/node:13.8.0
 
+commands:
+  hihello:
+    description: greetings
+    parameters:
+      to: 
+        type: string
+        default: hello world 
+    steps:
+      - run: echo << parameters.to >>
+
+
 jobs:
   save_hello_world_output:
     
     <<: *defaults
-    
+
     steps:
       - checkout
+      - hihello:
+          to: We are strong 
       - run: 
           name: make dir
           command: mkdir data
