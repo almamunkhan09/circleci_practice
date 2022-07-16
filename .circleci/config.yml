@@ -28,7 +28,7 @@ jobs:
     steps:
       - checkout
       - hihello:
-          to: We are strong 
+          
       - run: 
           name: make dir
           command: mkdir data
