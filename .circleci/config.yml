@@ -11,7 +11,7 @@ defaults: &defaults
 
 commands:
   hihello:
-    description: printing circle id
+    description: printing circle id 
     parameters:
       to: 
         type: string
@@ -36,6 +36,12 @@ jobs:
       - run: 
           name: save hello world
           command: echo "text to output here" > data/output.txt
+
+      - run:
+          name: Upload Failed Tests
+          command: echo "pipleine failed"
+          when: on_fail
+
       - persist_to_workspace:
           root: data
           paths:
